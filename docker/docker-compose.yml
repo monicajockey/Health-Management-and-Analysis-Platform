@@ -53,10 +53,11 @@ services:
     
   openhim-core:
     container_name: plir-openhim-core
-    image: jembi/openhim-core
+    image: jembi/openhim-core:5
     environment:
       - mongo_url=mongodb://mongo/openhim
       - mongo_atnaUrl=mongodb://mongo/openhim
+
     ports:
       - "8085:8080"
       - "5000:5000"
@@ -69,7 +70,7 @@ services:
       - mongo
   openhim-console:
     container_name: plir-openhim-console
-    image: jembi/openhim-console
+    image: jembi/openhim-console:1.14
     ports:
         - "9000:80"
     volumes:
@@ -85,3 +86,4 @@ services:
 volumes:
    openmrs-referenceapplication-mysql-data:
    openmrs-referenceapplication-data:
+
